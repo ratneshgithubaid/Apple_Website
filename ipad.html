@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ipad.css">
+
+</head>
+
+<body>
+
+    
+   
+    <div id="sidebar">
+        <ul>
+            <li>Overview</li>
+            <li>Features</li>
+            <li>Gallery</li>
+            <li>Accessories</li>
+            <li>Videos</li>
+            <li>Buy Now</li>
+        </ul>
+    </div>
+    <div id="content">
+        <section id="hero">
+            <h1 style="color: white;">The New iPad</h1>
+            <p style="color: white;">Power meets portability</p>
+            <button>Buy Now</button>
+        </section>
+        <section id="overview">
+            <h2>Discover the iPad</h2>
+            <p>Unleash your creativity with an all-new Liquid Retina display, M2 chip, and Apple Pencil support.</p>
+            <img src="./ipad.webp" alt="iPad Display">
+        </section>
+        <section id="features">
+            <h2>Top Features</h2>
+            <ul>
+                <li>M2 Chip for incredible performance</li>
+                <li>Liquid Retina Display with True Tone</li>
+                <li>Apple Pencil and Magic Keyboard Support</li>
+                <li>10-hour battery life for all-day use</li>
+                <li>iPadOS 16 with advanced multitasking</li>
+                <li>Pro-level camera system with LiDAR Scanner</li>
+                <li>USB-C connectivity for seamless workflows</li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2>iPad in Action</h2>
+            <div class="div">
+                <img src="./ipadpencil.jpeg" alt="iPad with Pencil">
+                <img src="./ipadmulti.jpg" alt="iPad Multitasking">
+                <img src="./ipadsideview.jpeg" alt="iPad Side View">
+            </div>
+        </section>
+        <section id="accessories">
+            <h2>Enhance Your iPad</h2>
+            <p>Pair your iPad with the Apple Pencil, Magic Keyboard, and Smart Folio to unlock its full potential.</p>
+        </section>
+        <section id="video">
+            <h2>Experience the iPad</h2>
+            <div class="video_1">
+                <video controls>
+                    <source src="./ipad1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="./ipad2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="./ipad3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+        <section id="buy">
+            <h2>Order Yours Today</h2>
+            <button>Shop Now</button>
+        </section>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll("section");
+            let options = { root: null, threshold: 0.1 };
+            let observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>

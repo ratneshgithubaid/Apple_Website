@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Mac.css">
+</head>
+
+<body>
+
+
+
+
+    <section id="hero">
+        <h1 style="color: black;">MacBook Pro</h1>
+        <p style="color:black;">Supercharged by M2 Pro and M2 Max</p>
+        <button>Buy Now</button>
+    </section>
+
+    <section id="overview">
+        <h2>Meet the new MacBook Pro</h2>
+        <p>With the latest Apple silicon, Liquid Retina XDR display, and all-day battery life.</p>
+        <img src="./macbookimg.avif" alt="MacBook Pro">
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <ul class="feature-list">
+            <li>Ultra-powerful M2 Pro and M2 Max Chips</li>
+            <li>Liquid Retina XDR Display with ProMotion</li>
+            <li>All-day Battery Life</li>
+            <li>Advanced Thermal System for Performance</li>
+            <li>macOS Ventura for Ultimate Productivity</li>
+        </ul>
+    </section>
+
+    <section id="performance">
+        <h2>Unparalleled Performance</h2>
+        <p>Experience blazing-fast speeds with Apple’s most advanced chips.</p>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="image-gallery">
+            <img src="./mcangleview.jpg" alt="MacBook Angle View">
+            <img src="./key.webp" alt="MacBook Keyboard">
+            <img src="./port.jpeg" alt="MacBook Side Ports">
+        </div>
+    </section>
+
+    <section id="video">
+        <h2>Watch the MacBook Pro in Action</h2>
+        <video controls autoplay>
+            <source src="./mcvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <section id="buy">
+        <h2>Get Yours Today</h2>
+        <button>Shop Now</button>
+    </section>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let sections = document.querySelectorAll("section");
+            let options = { root: null, threshold: 0.1 };
+            let observer = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, options);
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
